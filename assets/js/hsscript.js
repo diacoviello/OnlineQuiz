@@ -1,9 +1,9 @@
-var initials = document.querySelector(".initials");
+var initials = document.querySelector("#name-input");
 var submitBtn = document.querySelector("submit");
-var score = document.querySelector("score");
+var finalScore = document.querySelector("score");
 
 var userID = {
-  User: initials.value.trim(),
+  User: .value.trim(),
   Grade: score.value.trim(),
 };
 

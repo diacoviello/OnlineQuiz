@@ -20,11 +20,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-
-    <div class="high-scores">
-      <div class="card">
-          High Scores:
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <header
+      class="jumbotron jumbotron-fluid bg-dark text-light display-4 text-center"
+    >
+      <strong>Musical Geniuses:</strong>
+    </header>
+    <section class="d-flex flex-column justify-content-center">
+      <div class="col-12">
+        <p class="text-center display-5">Your score was</p>
       </div>
-    
+      <br />
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="card text-dark bg-warning width-8 height-8">
+            <div class="">
+              <label for="name-input">Your name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name-input"
+                placeholder="Enter your name"
+              />
+            </div>
+            <button class="btn btn-success">Submit Message.</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

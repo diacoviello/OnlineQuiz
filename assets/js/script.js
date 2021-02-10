@@ -6,7 +6,7 @@ var timerElement = document.querySelector(".timer-count");
 var timer;
 var timerCount;
 var currentQuestion = 0;
-var Score = 0;
+var Score = 1;
 var userScore = document.querySelector(".userScore");
 
 startButton.addEventListener("click", startGame);
@@ -70,8 +70,6 @@ function endGame() {
   clearInterval(timerCount);
   window.location.href = "highscores.html";
 }
-
-//redirect user to highscores page
 
 var questions = [
   {
@@ -138,3 +136,5 @@ var questions = [
     ],
   },
 ];
+
+localStorage.setItem("Final Score", JSON.stringify(Score);
