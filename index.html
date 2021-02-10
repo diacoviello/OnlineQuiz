@@ -13,11 +13,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
+
     <title>Music Quiz</title>
   </head>
 
-  <header class="jumbotron jumbotron-fluid bg-dark text-light display-4 text-center">
+  <header
+    class="jumbotron jumbotron-fluid bg-dark text-light display-4 text-center"
+  >
     <strong>Musical Knowledge Quiz</strong>
   </header>
 
@@ -25,69 +32,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-  
-    
-      <button id="start">Begin</button>
-
-      <div class="card-timer">
-            <div class = "timer-text">
-            <div class="large-font timer-count">100</div>
-            <h3>seconds remaining</h3>
-          </div>
-
-    <div class="questions" id="q1">
-      <h2>Which of the following is not a mode?</h2>
-      <ul class="answers" id="a1">
-        <li>Aeolian</li>
-        <li>Ionian</li>
-        <li>Lydian</li>
-        <li>Phormian</li>
+    <div class="row justify-content-center">
+      <div id="timer" class="card">
+        <div class="column">Time: <span class="timer-count">100</span></div>
+      </div>
+      <div id="score" class="card">
+        <div class="column">
+          Your score is:
+          <span class="userScore">HERE</span>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div
+      class="container-fluid text-center justify-content-center text-dark col-9"
+    >
+      <div id="question-container">
+        <div id="question">
+          Press "Begin" when you are ready to start your quiz...
+        </div>
+        <hr />
+        <div
+          id="answer-buttons"
+          class="row row-cols-2 justify-content-center"
+        ></div>
+        <br />
+        <br />
+        <div class="row justify-content-around">
+          <button id="startbtn" class="col-2 bg-secondary text-light">
+            Begin
+          </button>
+        </div>
+        <div class="row"></div>
+      </div>
     </div>
 
-    <div class="questions" id="q2">
-      <h2>How many forms does a minor scale have?</h2>
-      <ul class="answers" id="a2">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-    </div>
-
-    <div class="questions" id="q3">
-      <h2>How do we characterize a chord?</h2>
-      <ul class="answers" id="a3">
-        <li>The number of notes in the chord.</li>
-        <li>The distance between the notes within the chord.</li>
-        <li>The root of the chord structure and its relationship to placement within the chord.</li>
-        <li>All of the above.</li>
-    </div>
-
-    <div class="questions" id="q4">
-      <h2>What does a dot do to a note's value?</h2>
-      <ul class="answers" id="a4">
-        <li>Extends the value by half.</li>
-        <li>Decreases the value by half.</li>
-        <li>Doubles the note's value.</li>
-        <li>Doesn't change the note at all; simply for aesthetic purposes.</li>
-    </div>
-
-    <div class="questions" id="q5">
-        <h2>What does the top number of a time signature tell you?</h2>
-      <ul class="answers" id="a5">
-        <li>How many notes per measure.</li>
-        <li>How many beats per measure.</li>
-        <li>How many beats per minute.</li>
-        <li>The type of note that gets one beat.</li>
-    </div>
-
-    <div class="questions" id="q6">
-        <h2>What does the bottom number of a time signature tell you?</h2>
-      <ul class="answers" id="a6">
-        <li>How many notes per measure.</li>
-        <li>How many beats per measure.</li>
-        <li>How many beats per minute.</li>
-        <li>The type of note that gets one beat.</li>
-    </div>
-
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
