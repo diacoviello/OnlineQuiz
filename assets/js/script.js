@@ -6,7 +6,8 @@ var timerElement = document.querySelector(".timer-count");
 var timer;
 var timerCount;
 var currentQuestion = 0;
-var userScore = 0;
+var Score = 0;
+var userScore = document.querySelector(".userScore");
 
 startButton.addEventListener("click", startGame);
 
@@ -15,7 +16,6 @@ function startGame() {
   timerCount = 100;
   nextQuestion();
   startButton.style.display = "none";
-  console.log("started");
 }
 
 function startTimer() {
@@ -32,7 +32,7 @@ function startTimer() {
 
 function nextQuestion() {
   if (currentQuestion >= questions.length) {
-    return showResults();
+    return endGame();
   } else answerButtonElement.innerHTML = "";
   var firstQuestion = questions[currentQuestion];
   questionElement.textContent = firstQuestion.question;
@@ -52,16 +52,26 @@ function nextQuestion() {
 function selectAnswer(selected) {
   var answerStatus = questions[currentQuestion].answers[selected].correct;
   if (answerStatus === true) {
-    userScore++;
+    userScore.textContent = Score;
+    Score++;
+    console.log(Score);
   } else {
     timerCount -= 10;
   }
   currentQuestion++;
-  console.log(currentQuestion);
-  nextQuestion();
+  if (currentQuestion === questions.length) {
+    endGame();
+  } else {
+    nextQuestion();
+  }
 }
 
-function showResults() {}
+function endGame() {
+  clearInterval(timerCount);
+  window.location.href = "highscores.html";
+}
+
+//redirect user to highscores page
 
 var questions = [
   {
@@ -113,7 +123,7 @@ var questions = [
     answers: [
       { text: "How many notes per measure.", correct: false },
       { text: "How many beats per measure.", correct: true },
-      { text: "How many beats per mimnute.", correct: false },
+      { text: "How many beats per minute.", correct: false },
       { text: "The type of note that gets the beat.", correct: false },
     ],
   },
@@ -123,7 +133,7 @@ var questions = [
     answers: [
       { text: "How many notes per measure.", correct: false },
       { text: "How many beats per measure.", correct: false },
-      { text: "How many beats per mimnute.", correct: false },
+      { text: "How many beats per minute.", correct: false },
       { text: "The type of note that gets the beat.", correct: true },
     ],
   },
