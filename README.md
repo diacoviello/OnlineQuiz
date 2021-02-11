@@ -11,3 +11,5 @@ For every wrong answer, you earn 0 points and also lose 10 seconds on the timer.
 Complete the quiz within the alotted time and you will get to enter your name to a high scores page that documents all scores users obtained on the quiz.
 
 <img src="assets/images/screenshot.png">
+
+<a href="https://diacoviello.github.io/OnlineQuiz/">Live Link Here</a>
