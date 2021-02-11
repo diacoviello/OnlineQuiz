@@ -28,7 +28,9 @@
     </header>
     <section class="d-flex flex-column justify-content-center">
       <div class="col-12">
-        <p class="text-center display-5">Your score was</p>
+        <p class="text-center display-5">
+          Your score was <span id="highScore"></span>
+        </p>
       </div>
       <br />
       <div class="col-12">
@@ -43,10 +45,16 @@
                 placeholder="Enter your name"
               />
             </div>
-            <button class="btn btn-success">Submit Message.</button>
+            <button class="button">Submit Message.</button>
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div id="celebration" class="col-8"><h3>High Scores:</h3></div>
+        </div>
+      </div>
     </section>
+    <script src="assets/js/hsscript.js"></script>
   </body>
 </html>

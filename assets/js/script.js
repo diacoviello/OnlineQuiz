@@ -6,7 +6,7 @@ var timerElement = document.querySelector(".timer-count");
 var timer;
 var timerCount;
 var currentQuestion = 0;
-var Score = 1;
+var score = 0;
 var userScore = document.querySelector(".userScore");
 
 startButton.addEventListener("click", startGame);
@@ -33,9 +33,11 @@ function startTimer() {
 function nextQuestion() {
   if (currentQuestion >= questions.length) {
     return endGame();
-  } else answerButtonElement.innerHTML = "";
-  var firstQuestion = questions[currentQuestion];
-  questionElement.textContent = firstQuestion.question;
+  } else {
+    answerButtonElement.innerHTML = "";
+    var firstQuestion = questions[currentQuestion];
+    questionElement.textContent = firstQuestion.question;
+  }
   for (let index = 0; index < firstQuestion.answers.length; index++) {
     var newButtonElement = document.createElement("button");
     newButtonElement.classList = ["btn", "bg-primary", "border-dark"];
@@ -52,9 +54,9 @@ function nextQuestion() {
 function selectAnswer(selected) {
   var answerStatus = questions[currentQuestion].answers[selected].correct;
   if (answerStatus === true) {
-    userScore.textContent = Score;
-    Score++;
-    console.log(Score);
+    score++;
+    userScore.textContent = score;
+    console.log(score);
   } else {
     timerCount -= 10;
   }
@@ -68,6 +70,7 @@ function selectAnswer(selected) {
 
 function endGame() {
   clearInterval(timerCount);
+  localStorage.setItem("finalScore", score);
   window.location.href = "highscores.html";
 }
 
@@ -136,5 +139,3 @@ var questions = [
     ],
   },
 ];
-
-localStorage.setItem("Final Score", JSON.stringify(Score);
